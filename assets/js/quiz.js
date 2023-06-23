@@ -3,6 +3,9 @@ var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var submitBtn = document.querySelector("#submit-btn");
+var initialForm = document.querySelector("#initial-form");
+var initialsList = document.querySelector("#initials-list");
+var initialsInput = document.querySelector("#initials-text");
 
 var winCounter = 0;
 var loseCounter = 0;
@@ -13,29 +16,29 @@ var quizData = [
   {
     question: "Arrays in JavaScript must be enclosed in:",
     options: {
-      a: 'Curly Braces',
-      b: 'Parentheses',
-      c: 'Quotations',
+      a: "Curly Braces",
+      b: "Parentheses",
+      c: "Quotations",
     },
-    correctAnswer: 'c'
+    correctAnswer: "c",
   },
   {
     question: "A boolean is:",
     options: {
-      a: 'true/false',
-      b: 'a number',
-      c: 'an alien species',
+      a: "true/false",
+      b: "a number",
+      c: "an alien species",
     },
-    correctAnswer: 'a'
+    correctAnswer: "a",
   },
   {
     question: "To terminate a line of code in JavaScript, you must use:",
     options: {
-      a: '?',
-      b: ';',
-      c: '*',
+      a: "?",
+      b: ";",
+      c: "*",
     },
-    correctAnswer: 'b'
+    correctAnswer: "b",
   },
 ];
 
@@ -47,75 +50,75 @@ function init() {
 var currentQuestionIndex = 0;
 
 function startGame() {
-	currentQuestionIndex = 0;
+  currentQuestionIndex = 0;
   timerCount = 10;
   startButton.disabled = true;
-  startTimer();
 }
 
 function renderQuestion(questionIndex) {
-	var questionData = quizData[questionIndex];
-	var questionContainer = document.querySelector("#question-container");
-	questionContainer.innerHTML = ""; // Clear previous question
-  
-	// Create question element
-	var questionElement = document.createElement("h2");
-	questionElement.textContent = questionData.question;
-	questionContainer.appendChild(questionElement);
-  
-	// Create options elements
-	var optionsContainer = document.createElement("div");
-	optionsContainer.className = "options-container";
-  
-	for (var option in questionData.options) {
-	  var optionElement = document.createElement("label");
-	  var radioInput = document.createElement("input");
-	  radioInput.type = "radio";
-	  radioInput.name = "question" + questionIndex;
-	  radioInput.value = option;
-	  optionElement.appendChild(radioInput);
-	  optionElement.appendChild(document.createTextNode(questionData.options[option]));
-	  optionsContainer.appendChild(optionElement);
-	}
-  
-	questionContainer.appendChild(optionsContainer); // Append options container to question container
+  var questionData = quizData[questionIndex];
+  var questionContainer = document.querySelector("#question-container");
+  questionContainer.innerHTML = ""; // Clear previous question
+
+  // Create question element
+  var questionElement = document.createElement("h2");
+  questionElement.textContent = questionData.question;
+  questionContainer.appendChild(questionElement);
+
+  // Create options elements
+  var optionsContainer = document.createElement("div");
+  optionsContainer.className = "options-container";
+
+  for (var option in questionData.options) {
+    var optionElement = document.createElement("label");
+    var radioInput = document.createElement("input");
+    radioInput.type = "radio";
+    radioInput.name = "question" + questionIndex;
+    radioInput.value = option;
+    optionElement.appendChild(radioInput);
+    optionElement.appendChild(
+      document.createTextNode(questionData.options[option])
+    );
+    optionsContainer.appendChild(optionElement);
   }
-  
+}
 
 function checkQuiz() {
-	var selectedOption = document.querySelector('input[name="question' + currentQuestionIndex + '"]:checked');
-	if (selectedOption) {
-	  var selectedAnswer = selectedOption.value;
-	  if (selectedAnswer === quizData[currentQuestionIndex].correctAnswer) {
-		// Correct answer
-		console.log('Question ' + (currentQuestionIndex + 1) + ' - Correct!');
-	  } else {
-		// Incorrect answer
-		console.log('Question ' + (currentQuestionIndex + 1) + ' - Incorrect!');
-	  }
-	  currentQuestionIndex++; // Move to the next question
-  
-	  if (currentQuestionIndex < quizData.length) {
-		renderQuestion(currentQuestionIndex); // Render the next question
-	  } else {
-		endQuiz(); // No more questions, end the quiz
-	  }
-	} else {
-	  // No answer selected
-	  console.log('Question ' + (currentQuestionIndex + 1) + ' - No answer selected!');
-	}
-  }
+  var selectedOption = document.querySelector(
+    'input[name="question' + currentQuestionIndex + '"]:checked'
+  );
+  if (selectedOption) {
+    var selectedAnswer = selectedOption.value;
+    if (selectedAnswer === quizData[currentQuestionIndex].correctAnswer) {
+      // Correct answer
+      console.log("Question " + (currentQuestionIndex + 1) + " - Correct!");
+    } else {
+      // Incorrect answer
+      console.log("Question " + (currentQuestionIndex + 1) + " - Incorrect!");
+    }
+    currentQuestionIndex++; // Move to the next question
 
-  function endQuiz() {
-	clearInterval(timer);
-	// Display final results or perform any other actions
-	startButton.disabled = false;
+    if (currentQuestionIndex < quizData.length) {
+      renderQuestion(currentQuestionIndex); // Render the next question
+    } else {
+      endQuiz(); // No more questions, end the quiz
+    }
+  } else {
+    // No answer selected
+    console.log(
+      "Question " + (currentQuestionIndex + 1) + " - No answer selected!"
+    );
   }
-  
-  
+}
+
+function endQuiz() {
+  clearInterval(timer);
+  // Display final results or perform any other actions
+  startButton.disabled = false;
+}
 
 function startTimer() {
-  timer = setInterval(function() {
+  timer = setInterval(function () {
     timerCount--;
     timerElement.textContent = timerCount;
     if (timerCount === 0) {
@@ -163,9 +166,87 @@ function resetGame() {
 
 startButton.addEventListener("click", startGame);
 
+var initials = [];
+
+// The following function renders items in a todo list as <li> elements
+function renderInitials() {
+  // Clear todoList element and update todoCountSpan
+  initialsList.innerHTML = "";
+  initialsCountSpan.textContent = initials.length;
+
+  // Render a new li for each todo
+  for (var i = 0; i < initials.length; i++) {
+    var initial = initials[i];
+
+    var li = document.createElement("li");
+    li.textContent = initial;
+    li.setAttribute("data-index", i);
+
+    var button = document.createElement("initials-button");
+
+    li.appendChild(button);
+    initialsList.appendChild(li);
+  }
+}
+function init() {
+  // Get stored todos from localStorage
+  var storedInitials = JSON.parse(localStorage.getItem("initials"));
+
+  // If todos were retrieved from localStorage, update the todos array to it
+  if (storedInitials !== null) {
+    initials = storedInitials;
+  }
+
+  // This is a helper function that will render todos to the DOM
+  renderInitials();
+}
+
+function storeInitials() {
+  // Stringify and set key in localStorage to todos array
+  localStorage.setItem("initials", JSON.stringify(initials));
+}
+
+// Add submit event to form
+initialForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  var initialText = initialInput.value.trim();
+
+  // Return from function early if submitted todoText is blank
+  if (initialText === "") {
+    return;
+  }
+
+  // Add new todoText to todos array, clear the input
+  initials.push(initialsText);
+  initialInput.value = "";
+
+  // Store updated todos in localStorage, re-render the list
+  storeInitials();
+  renderInitials();
+});
+
+// Add click event to todoList element
+// initialsList.addEventListener("click", function(event) {
+//   var element = event.target;
+
+  // Checks if element is a button
+//   if (element.matches("button") === true) {
+//     // Get its data-index value and remove the todo element from the list
+//     var index = element.parentElement.getAttribute("data-index");
+//     initials.splice(index, 1);
+
+    // Store updated todos in localStorage, re-render the list
+//     storeInitials();
+//     renderInitials();
+//   }
+// });
+
+
+
 // Calls init() so that it fires when the page is opened
 init();
 
-// Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
-resetButton.addEventListener("click", resetGame);
+// // Bonus: Add reset button
+// var resetButton = document.querySelector(".reset-button");
+// resetButton.addEventListener("click", resetGame);

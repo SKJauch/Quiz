@@ -12,14 +12,14 @@ body {
   background: linear-gradient(0deg, rgb(82, 10, 116) 0%, rgba(237,245,249,1) 60%);
 }
 
-.reset-button {
+.initials-button {
   font-size: 16px;
   height: 30px;
   line-height: 11px;
   margin-top: 10px;
 }
 
-.win-loss-container {
+.initials-container {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
@@ -46,7 +46,7 @@ button {
 header {
   padding: 40px;
   text-align: center;
-  background: linear-gradient(0deg, rgba(237,245,249,1) 0%, rgb(82, 10, 116) 75%);
+  background: linear-gradient(0deg, rgba(237,245,249,1) 0%, rgb(82, 10, 116) 60%);
   color: #fff;
   border-bottom:30px #879274;
 }
@@ -120,4 +120,36 @@ section {
 
 .options-container input[type="radio"] {
   margin-right: 5px;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color:  #001b44;
+  color: white;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+li:before {
+  content: "\200B";
+  position: absolute;
+}
+
+li::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+li button {
+  float: right;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ff7034;
+  color: white;
+  font-size: 1em;
 }
