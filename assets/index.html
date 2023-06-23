@@ -7,36 +7,24 @@
     <link rel="stylesheet" href="style.css" />
     <title>Quiz</title>
   </head>
-  <body>
+ 
     
-
-    <main>
-      <section>
-        <div class="card quiz">
-          <div class="large-font">QUIZ</div>
+    <body>
+      <div id="quiz-container">
+        <h1>Quiz App</h1>
+        <div id="question-container"></div>
+        <button id="submit-btn">Submit</button>
+        <div id="timer">Time Remaining: <span id="time">00:00</span></div>
+        <div>
+          <h2>Wins: <span class="win">0 </span></h2>
+          <h2>Losses: <span class="lose">0</span></h2>
         </div>
-      </section>
-
-      <section>
-        <div class="card results">
-          <div class="win-loss-container">
-            <div>
-              <h2>Wins: <span class="win">0 </span></h2>
-              <h2>Losses: <span class="lose">0</span></h2>
-            </div>
-            <button class="reset-button">Reset Score</button>
-          </div>
-          <div class="card timer">
-            <div class="timer-text">
-              <div class="large-font timer-count">10</div>
-              <h3>seconds remaining</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- must be at the bottom -->
-    <script src="quiz.js"></script>
-  </body>
+        <button class="reset-button">Reset Score</button>
+      </div>
+      </div>
+      <script src="quiz.js"></script>
+    </body>
+    
+    
+  
 </html>
