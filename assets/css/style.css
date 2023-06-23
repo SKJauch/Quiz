@@ -1,27 +1,123 @@
-body {
-  font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-#quiz-container {
-  max-width: 600px;
-  margin: 0 auto;
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background: linear-gradient(0deg, rgb(82, 10, 116) 0%, rgba(237,245,249,1) 60%);
+}
+
+.reset-button {
+  font-size: 16px;
+  height: 30px;
+  line-height: 11px;
+  margin-top: 10px;
+}
+
+.win-loss-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+button {
+  background: rgba(109, 84, 223, 0.954); 
+  border-radius: 8px;
+  color: #450d5f;
+  cursor: pointer;
+  font-size: 2em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(237,245,249,1) 0%, rgb(82, 10, 116) 75%);
+  color: #fff;
+  border-bottom:30px #879274;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section {
+  flex: 0 auto;
+  padding: 8px;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.quiz {
+  width: 55vw;
+  height: 400px;
+}
+.results {
+  width: 30vw;
+  height: 400px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #270744;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+  margin: auto;
   padding: 20px;
 }
 
-h1, h2 {
+.large-font {
+  font-size: 3.5em;
+  text-align:center;
+}
+
+.timer {
+  height: 175px;
+  padding: 3px;
+  background: #44095f;
+  color: #fff;
   text-align: center;
+}
+
+.timer-text {
+  padding: 30px;
 }
 
 #question-container {
-  margin-bottom: 20px;
+  display: flex;
+  border: 3px solid black;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.options-container {
+  display: flex;
+  flex-direction: column;
 }
 
-#submit-btn {
-  display: block;
-  margin: 0 auto;
+.options-container label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-#timer {
-  text-align: center;
+.options-container input[type="radio"] {
+  margin-right: 5px;
 }
-  
