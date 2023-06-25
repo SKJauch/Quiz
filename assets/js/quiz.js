@@ -4,9 +4,9 @@ var timerElement = document.querySelector(".timer");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 // var saveBtn = document.querySelector("#save-btn");
-var initialsInput = document.querySelector("#initials-text");
+// var initialsInput = document.querySelector("#initials-text");
 var initialsForm = document.querySelector("#score-form");
-var initialsList = document.querySelector("#initials-list");
+// var initialsList = document.querySelector("#initials-list");
 var initialsSpan = document.querySelector("#initials");
 // var cardDiv = document.querySelector("#card");
 
@@ -56,20 +56,20 @@ function init() {
 
 var currentQuestionIndex = 0;
 
-function resetFeedback() {
-  feedbackElement.textContent = "";
-}
+// function resetFeedback() {
+//   feedbackElement.textContent = "";
+// }
 
 function startGame() {
   isWin = false;
   timerCount = 30;
   startButton.disabled = true;
   startTimer();
-  setNextQuestion();
+  // setNextQuestion();
 }
 
 function setNextQuestion() {
-  resetFeedback();
+  // resetFeedback();
   showQuestion(quizData[currentQuestionIndex]);
 }
 
@@ -235,9 +235,9 @@ initialsInput.addEventListener("keyup", function(event) {
     var enteredInitials = initialsInput.value.trim();
 
     // Return from function early if enteredInitials is blank
-    if (enteredInitials === "") {
-      return;
-    }
+    // if (enteredInitials === "") {
+    //   return;
+    // }
 
     // Add new enteredInitials to initials array, clear the input
     initials.push(enteredInitials);
