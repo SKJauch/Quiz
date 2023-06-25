@@ -16,7 +16,7 @@
       
           <div class= "card timer">
             <div class = "timer-text">
-            <div class="large-font timer-count">10</div>
+            <div class="large-font timer-count">30</div>
             <h3>seconds remaining</h3>
           </div>
         
@@ -37,20 +37,38 @@
           <div>
           <h2>Wins: <span class="win">0 </span> </h2>
           <h2>Losses: <span class="lose">0</span></h2>
-        </div>
-          <div class = "initials-container">
-          <div>
-          <h2>Your Initials: <span class="win"> </span> </h2>
-          <form id="initial-form" method="POST">
-            <label for="initial-text"></label>
-            <input type="text" placeholder="Enter your initials"name="initial-text" id="todo-text" />
-            <button class="initials-button">Save Initials</button>
+          
+            <button class="reset-button">Reset Score</button>
           </form>
           
         </div>
           
       
       </section>
+      <section>
+        <div class="card">
+          <h2>Leaderboard</h2>
+          <form id="score-form" method="POST">
+            <label for="initials-text">Add your initials:</label>
+            <input type="text" name="initials-text" id="initials-text" placeholder="Type Initials and Press Enter" />
+          </form>
+          <p>Initials: <span id="initials-text"></span></p>
+          <ul id="initials-list"></ul>
+        </div>
+      </section>
+      <!-- <section>
+        <div class="card">
+          <h2>Leaderboard</h2>
+          <form id="score-form" method="POST">
+            <label for="initials-text">Add your initials </label>
+             <input type="text" name="initials-text" id="initials-text" placeholder="Type Initials and Press Enter" />
+          </form>
+          <p>Initials: <span id="initials-text"></span></p>
+          <ul id="initials-list"></ul>
+          
+          
+        </div>
+      </section> -->
     </main>
     </main>
       <script src="./js/quiz.js"></script>

@@ -19,6 +19,18 @@ body {
   margin-top: 10px;
 }
 
+.reset-button {
+  font-size: 20px;
+  height: 30px;
+  line-height: 8px;
+  margin-top: 20px;
+}
+
+#save-btn{
+  font-size: 20px;
+}
+
+
 .initials-container {
   display: flex;
   justify-content: space-between;
@@ -101,37 +113,6 @@ section {
   padding: 30px;
 }
 
-#question-container {
-  display: flex;
-  border: 3px solid black;
-  justify-content: space-between;
-  margin-top: 16px;
-}
-.options-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.options-container label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.options-container input[type="radio"] {
-  margin-right: 5px;
-}
-
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color:  #001b44;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
 
 li:before {
   content: "\200B";
@@ -149,7 +130,77 @@ li button {
   border: none;
   height: 40px;
   cursor: pointer;
-  background-color: #ff7034;
+  background-color: #540c5e;
   color: white;
   font-size: 1em;
+}
+
+@media screen and (max-width: 1183px) {
+  main {
+    flex-direction: column;
+  }
+
+  .word-guess,
+  .results {
+    width: 90vw;
+  }
+
+  section {
+    background-color: white;
+    margin: 20px auto;
+    width: 92vw;
+  }
+}
+
+@media screen and (max-width: 504px) {
+  .large-font {
+    font-size: 2em;
+  }
+
+  .reset-button {
+    font-size: 12px;
+    width: 20ox;
+    
+  }
+
+  .timer {
+    height: 200px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+#entered-initials {
+  font-weight: bold;
+  font-size: 18px;
 }
