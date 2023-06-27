@@ -26,11 +26,6 @@ body {
   margin-top: 20px;
 }
 
-#save-btn {
-  font-size: 20px;
-}
-
-
 .initials-container {
   display: flex;
   justify-content: space-between;
@@ -200,7 +195,7 @@ li {
   margin-bottom: 5px;
 }
 
-#entered-initials {
+#initials-text {
   font-weight: bold;
   font-size: 18px;
 }
