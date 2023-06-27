@@ -26,7 +26,7 @@ body {
   margin-top: 20px;
 }
 
-#save-btn{
+#save-btn, #submit-btn{
   font-size: 20px;
 }
 
