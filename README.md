@@ -6,4 +6,8 @@ A multiple choice quiz for students learning JavaScript.  Upon clicking on the "
 
 ## GitHub
 
-To view the GitHub repo, you can visit (https://github.com/SKJauch/logo-maker)
+To view the GitHub repo, you can visit (https://github.com/SKJauch/Quiz)
+
+## Deployed Link  
+
+https://skjauch.github.io/Quiz/
