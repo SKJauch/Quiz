@@ -11,3 +11,10 @@ To view the GitHub repo, you can visit (https://github.com/SKJauch/Quiz)
 ## Deployed Link  
 
 https://skjauch.github.io/Quiz/
+
+
+## Screenshots  
+
+![Top of Page](4-1.png)  
+
+![Bottom of Page](4-2.png)
